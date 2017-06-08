@@ -1,0 +1,170 @@
+﻿<div>
+    <div class="header">
+        <img id="header-image" class="img-responsive" src="Images/CORE-PF-Header-Logo.jpg" />
+    </div>
+    <div class="center">
+        <div class="container-fluid top">
+            <div class="row">
+                <div class="col-sm-12 date">
+                    <h3>
+                        {{todayDate}}
+                    </h3>
+                </div>
+            </div>
+            <div class="row date-arrows">
+                <a href="" ng-click="prevDay()"><img src="Images/left-arrow.png" width="40" height="30" /></a>Prev Day | Next Day
+                <a href="" ng-click="nextDay()"><img src="Images/right-arrow.png" width="40" height="30" /></a>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 input-container">
+                    <h1 class="">Enter Food</h1>
+                    <form id="food-input-form">
+                        <div class="row">
+                            <div class="col-md-4 label">
+                                Food Name:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="foodItem.name" name="food" id="food-name" />
+                                <p></p>
+                            </div>
+                        </div><br />
+                        <div class="row">
+                            <div class="col-md-4 label">
+                                Protein:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="foodItem.protein" name="protein" id="proteinAmount" />
+                                <p>{{proteinError}}</p>
+                            </div>
+                        </div><br />
+                        <div class="row">
+                            <div class="col-md-4 label">
+                                Carbs:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="foodItem.carbs" name="carbs" id="carb-amount" />
+                                <p>{{carbsError}}</p>
+                            </div>
+                        </div><br />
+                        <div class="row">
+                            <div class="col-md-4 label">
+                                Fat:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="foodItem.fat" name="fat" id="fat-amount" />
+                                <p>{{fatError}}</p>
+                            </div>
+                        </div><br />
+                        <div class="row">
+                            <div class="col-md-4 label">
+                                Calories:
+                            </div>
+                            <div class="col-md-8">
+                                <p id="calorie-amount">{{calorieAmount}}</p>
+                            </div>
+                        </div><br /><br />
+                        <div class="row">
+                            <div class="col-sm-12 arrow-text">
+                                <div class="row">
+                                    <input type="submit" ng-click="addFood()" id="form-submit-button" value="Enter Food" />
+                                    <input type="button" ng-click="resetAll()" id="reset-all-button" value="Reset Food" />
+                                </div><br /> 
+                            </div>
+                        </div>
+                    </form><br />
+                </div>
+                <div class="col-sm-5 daily-needs-container">
+                    <h1>Daily Needs</h1>
+                    <div class="daily-needs-rows">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Calories:
+                            </div>
+                            <div ng-model="dailyItem.calories" id="dailyCalories" class="col-xs-6">
+                                {{dailyCalories}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Protein:
+                            </div>
+                            <div ng-model="dailyItem.protein" id="dailyProtein" class="col-xs-6">
+                                {{dailyProtein}}g
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Carbs:
+                            </div>
+                            <div ng-model="dailyItem.carbs" id="dailyCarbs" class="col-xs-6">
+                                {{dailyCarbs}}g
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Fat:
+                            </div>
+                            <div ng-model="dailyItem.fat" id="dailyFat" class="col-xs-6">
+                                {{dailyFat}}g
+                            </div>
+                        </div><br />
+                    </div>
+                    <h1>Daily Totals</h1>
+                    <div class="daily-totals-rows">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Calories:
+                            </div>
+                            <div ng-model="totalItem.calories" id="totalCalories" class="col-xs-6">
+                                {{totalCalories}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Protein:
+                            </div>
+                            <div ng-model="totalItem.protein" id="totalProtein" class="col-xs-6">
+                                {{totalProtein}}g
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Carbs:
+                            </div>
+                            <div ng-model="totalItem.carbs" id="totalCarbs" class="col-xs-6">
+                                {{totalCarbs}}g
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                Fat:
+                            </div>
+                            <div ng-model="totalItem.fat" id="totalFat" class="col-xs-6">
+                                {{totalFat}}g
+                            </div>
+                        </div><br />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div><br />
+        <div class="menu-items">
+            <div ng-repeat="item in foodItems">
+                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#food-{{$index}}">
+                    {{item.name}}
+                </button>
+                <div id="food-{{$index}}" class="collapse">
+                    <ul>
+                        <li>Protein: {{item.protein}}g</li>
+                        <li>Carbs: {{item.carbs}}g</li>
+                        <li>Fat: {{item.fat}}g</li>
+                        <li>Total Calories: {{item.calories}}</li>
+                        <li class="update-delete-list-item"><a ng-click="updateItem(item)" class="update-link">Update</a><a ng-click="deleteItem(item)" class="delete-link">Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- Center -->
+</div>

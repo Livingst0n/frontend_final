@@ -1,0 +1,174 @@
+﻿html, body {
+    /*background-color: #4BA9AB;*/
+    background-color: black;
+    height: 100%;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+.arrow-text {
+    align-content: center;
+    text-align: center;
+}
+
+.date-arrows {
+    align-content: center;
+    text-align: center;
+}
+
+.header {
+    background-color: black;
+    float: right;
+    width: 100%;
+}
+
+h1 {
+    font-family: Impact;
+    margin-top: 10px;
+}
+
+.date, h3 {
+    text-align: center;
+    font-family: Arial;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+#form-submit-button, #reset-all-button {
+    font-size: 18px;
+}
+
+#header-image {
+    padding: 10px;
+    float: right;
+    width: 400px;
+    height: 150px;
+}
+
+.center {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: auto;
+    padding: 15px;
+    opacity: 0.9;
+    background: rgba(87,202,184,0.8);
+}
+
+.input-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-right: solid;
+}
+
+input {
+    font-size: 16px;
+}
+
+p#calorie-amount {
+    font-size: 18px;
+}
+
+.daily-needs-rows, .daily-totals-rows {
+    font-size: 18px;
+}
+
+.label {
+    text-align: left;
+    color: black;
+    font-size: 18px;
+}
+
+.top {
+    border-bottom: solid;
+    padding-bottom: 15px;
+}
+
+.menu-items {
+    background-color: inherit;
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+    text-align: left;
+    background-color: black;
+    color: rgba(87,202,184,0.8);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn[aria-expanded="true"] {
+    color: rgba(87,202,184,0.8);
+    background: black;
+}
+
+.btn-info:hover {
+    color: rgba(87,202,184,0.8);
+    background: black;
+    border-color: white;
+}
+.btn-info:focus {
+    color: rgba(87,202,184,0.8);
+    background: black;
+    border-color: white;
+}
+
+.dropdown-menu > a {
+    color: white;
+}
+
+.update-delete-list-item {
+    list-style-type: none;
+    font-size: 16px;
+}
+
+.update-link {
+    color: black;
+    cursor: pointer;
+}
+
+.delete-link {
+    list-style-type: none;
+    float: right;
+    padding-right: 5%;
+    color: red;
+    cursor: pointer;
+}
+
+@media(max-width: 767px) {
+    .center {
+        width: 80%;
+    }
+
+    .input-container div, .input-container input {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    h1, .daily-needs-container {
+        text-align: center;
+    }
+
+    .input-container {
+        border-right: none;
+        border-bottom: solid;
+    }
+
+    .daily-needs-container {
+        border-bottom: solid;
+    }
+
+    .top {
+        border-bottom: none;
+    }
+}
+
